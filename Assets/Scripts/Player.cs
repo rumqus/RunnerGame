@@ -6,28 +6,37 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float forceOfJump;
-    private bool isJumped;
-    public static bool isGrounded;
-    private int extraJump;
-    private int currnetJump;
-    private bool doubleJump;
+    [SerializeField] private Transform groundTriger;
+    [SerializeField] private LayerMask groundLayer;
+    
+    
+    private bool isGrounded;
+    
+    private int extraJump = 1;
+    private int currentJump;
+    
 
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         speed = 8f;
         forceOfJump = 70f;
-        isJumped = false;
+        currentJump = 0;
         isGrounded = true;
-        doubleJump = true;
-        extraJump = 2;
-        currnetJump = extraJump;
+
     }
 
     private void Update()
     {
-        DetectJump();
-        ResetJumpCount();
+        //DetectJump();
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+            Debug.Log("JUMP!!");
+        }
+
+        CheckGrounded();
+        
     }
 
 
@@ -36,43 +45,53 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         playerRB.velocity = transform.right * speed;
-        PlayerJump();
-
-
+        
     }
 
-    void PlayerJump()
+    
+
+   
+
+    /// <summary>
+    /// метод проверки стоит ли игрок на земле
+    /// </summary>
+    private void CheckGrounded() 
     {
-        if (isGrounded == false && currnetJump > 0)
+        if (Physics2D.OverlapCircle(groundTriger.position, 0.01f, groundLayer))
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
-            //playerRB.AddForce(transform.up * forceOfJump, ForceMode2D.Impulse);
-            Debug.Log("space");
-
+            isGrounded = true;
+            currentJump = 0;
         }
-        else if (currnetJump == 0)
-        {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y);
-        }
-
-    }
-
-    private void DetectJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        else 
         {
             isGrounded = false;
-
         }
 
     }
 
-    private void ResetJumpCount()
+    private void Jump() 
     {
-        if (isGrounded == true)
+        if (isGrounded = true || currentJump < extraJump)
         {
-            currnetJump = extraJump;
+            playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
+            currentJump++;
+            Debug.Log("JUMP METHOD DONE");
         }
-
+         
+    
     }
+
+    private bool DetectJump() 
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    
+    }
+
 }
