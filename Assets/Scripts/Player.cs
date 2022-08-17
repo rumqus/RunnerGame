@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         speed = 8f;
-        forceOfJump = 70f;
+        forceOfJump = 35f;
         currentJump = 0;
         isGrounded = true;
 
@@ -28,14 +28,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //DetectJump();
+        
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
-            Debug.Log("JUMP!!");
         }
-
         CheckGrounded();
+        Debug.Log(isGrounded);
+        Debug.Log(currentJump);
         
     }
 
@@ -44,8 +44,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRB.velocity = transform.right * speed;
+        playerRB.velocity = new Vector2(speed, playerRB.velocity.y);
         
+
     }
 
     
@@ -69,9 +70,9 @@ public class Player : MonoBehaviour
 
     }
 
-    private void Jump() 
+    public void Jump() 
     {
-        if (isGrounded = true || currentJump < extraJump)
+        if (isGrounded = true && currentJump < extraJump)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
             currentJump++;
