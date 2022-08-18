@@ -19,10 +19,11 @@ public class Player : MonoBehaviour
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        speed = 7f;
+        speed = 0f;
         forceOfJump = 35f;
         currentJump = 0;
         isGrounded = true;
+        
 
     }
 
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
         }
 
         CheckGrounded();
+        
     }
 
     /// <summary>

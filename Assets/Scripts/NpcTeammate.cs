@@ -7,37 +7,46 @@ public class NpcTeammate : MonoBehaviour
     private Transform currentObject;
     private bool activated = false;
     private float step;
-    private Vector3 distanceToPlayer;
+    private Vector3 distance;
+
 
 
     private void Start()
     {
-        
-        speed = 8f;
+        speed = 4.1f;
         currentObject = GetComponent<Transform>();
+
     }
 
     private void Update()
     {
-        distanceToPlayer = new Vector3(1, 0, 0);
+
         step = Time.deltaTime * speed;
 
         if (activated)
         {
             NpcMovement();
-            
+
         }
     }
 
     private void NpcMovement()
     {
-        currentObject.position = Vector2.MoveTowards(transform.position, target.position - distanceToPlayer , step);
-        Debug.Log("NPC - I am Moving");
+        currentObject.position = Vector2.MoveTowards(transform.position, target.position - distance , step);
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        activated = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            activated = true;
+            distance = new Vector3(NPCList.sizeDistance,0,0);
+            NPCList.sizeDistance++;
+            GetComponent<Collider2D>().enabled = false;
+
+
+        }
 
     }
 
