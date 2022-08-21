@@ -1,9 +1,20 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D playerRB;
+    
+    public List<GameObject> followingNPC = new List<GameObject>();// лист в который будем добавлять следующих за игроком npc
+    [SerializeField] private float minDistance; // минимальная дистанция между npc
+    [SerializeField] private float npcSpeed; // скорость npc
+    [SerializeField] private float distanceNPC;
+
+    private Transform currentNPC;
+    private Transform previousNPC;
+
+
+    private Rigidbody2D playerRB; // rigid body игрока
 
     [SerializeField] private float speed; // скорость игрока
     [SerializeField] private float forceOfJump; // сила прыжка
@@ -15,7 +26,7 @@ public class Player : MonoBehaviour
     private int extraJump = 1; // количество доп прыжков
     private int currentJump; // текущее количество совершенных прыжков
 
-
+   
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -23,9 +34,10 @@ public class Player : MonoBehaviour
         forceOfJump = 35f;
         currentJump = 0;
         isGrounded = true;
-        
-
+        followingNPC.Add(gameObject);
     }
+
+
 
     private void Update()
     {
@@ -36,19 +48,55 @@ public class Player : MonoBehaviour
         }
 
         CheckGrounded();
-        
+        NPCMOve();
     }
 
-    /// <summary>
-    /// движение игрока
-    /// </summary>
-    private void FixedUpdate()
+
+    private void OnEnable()
     {
-       // playerRB.velocity = new Vector2(speed, playerRB.velocity.y);
+        Actions.addNPC += AddNPC;
+    }
+
+    private void OnDisable()
+    {
+        Actions.addNPC -= AddNPC;
+    }
+
+
+
+    /// <summary>
+    /// метод добавления npc который следует за игроком.
+    /// </summary>
+    private void AddNPC() 
+    {
+        GameObject npc = Instantiate(followingNPC[followingNPC.Count - 1], followingNPC[followingNPC.Count - 1].transform.position, followingNPC[followingNPC.Count - 1].transform.rotation);
+        //npc.transform.SetParent(transform);
+    
     }
 
     /// <summary>
-    /// метод проверки стоит ли игрок на земле
+    /// метод следования за игроком
+    /// </summary>
+    private void NPCMOve() 
+    {
+        if (followingNPC.Count > 1) // проверем список нпс - что бы был больше 1 начального объекта игррока
+        {
+            for (int i = 1; i < followingNPC.Count; i++)
+            {
+                currentNPC = followingNPC[i].transform;
+                previousNPC = followingNPC[i - 1].transform;
+                distanceNPC = Vector3.Distance(previousNPC.position, currentNPC.position);
+                Vector3 newPositionNPC = previousNPC.position;
+                currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcSpeed * Time.deltaTime);
+            }
+
+        }
+        
+    
+    }
+
+    /// <summary>
+    /// метод проверки: стоит ли игрок на земле
     /// </summary>
     private void CheckGrounded()
     {

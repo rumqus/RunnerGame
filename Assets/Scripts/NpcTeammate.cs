@@ -15,11 +15,10 @@ public class NpcTeammate : MonoBehaviour
     {
         speed = 4.1f;
         currentObject = GetComponent<Transform>();
-
     }
 
     private void Update()
-    {
+    {      
 
         step = Time.deltaTime * speed;
 
@@ -32,8 +31,7 @@ public class NpcTeammate : MonoBehaviour
 
     private void NpcMovement()
     {
-        currentObject.position = Vector2.MoveTowards(transform.position, target.position - distance , step);
-       
+        currentObject.position = Vector2.MoveTowards(transform.position, target.position - distance, step);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
