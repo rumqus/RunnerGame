@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 3970214747680791196}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714653258f3d85340b1b73f47a765143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  followingNPC: []
+  indexes: 
+  minDistance: 1
+  npcSpeed: 1
+  distanceNPC: 1
+  speed: 0
   forceOfJump: 4
   groundTriger: {fileID: 3970214747531774325}
   groundLayer:

@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+    // данные npc
     public List<GameObject> followingNPC = new List<GameObject>();// лист в который будем добавлять следующих за игроком npc
     [SerializeField] private float minDistance; // минимальная дистанция между npc
     [SerializeField] private float npcSpeed; // скорость npc
     [SerializeField] private float distanceNPC;
+    private Transform currentNPC; // положение к которому двиэенмся
+    private Transform previousNPC; // положение с которого npc начинате движение
 
-    private Transform currentNPC;
-    private Transform previousNPC;
-
-
+    // данные игрока
     private Rigidbody2D playerRB; // rigid body игрока
-
     [SerializeField] private float speed; // скорость игрока
     [SerializeField] private float forceOfJump; // сила прыжка
     [SerializeField] private Transform groundTriger;
     [SerializeField] private LayerMask groundLayer;
     private bool isGrounded; // стоит ли на змеле
-     
-
     private int extraJump = 1; // количество доп прыжков
     private int currentJump; // текущее количество совершенных прыжков
 
@@ -30,7 +26,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        speed = 0f;
         forceOfJump = 35f;
         currentJump = 0;
         isGrounded = true;
@@ -41,6 +36,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        npcSpeed = speed - 0.1f;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(5, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
@@ -49,6 +45,7 @@ public class Player : MonoBehaviour
 
         CheckGrounded();
         NPCMOve();
+        Debug.Log(followingNPC.Count);
     }
 
 
@@ -68,10 +65,9 @@ public class Player : MonoBehaviour
     /// метод добавления npc который следует за игроком.
     /// </summary>
     private void AddNPC() 
-    {
+    {        
         GameObject npc = Instantiate(followingNPC[followingNPC.Count - 1], followingNPC[followingNPC.Count - 1].transform.position, followingNPC[followingNPC.Count - 1].transform.rotation);
-        //npc.transform.SetParent(transform);
-    
+        Destroy(npc);
     }
 
     /// <summary>
@@ -86,8 +82,10 @@ public class Player : MonoBehaviour
                 currentNPC = followingNPC[i].transform;
                 previousNPC = followingNPC[i - 1].transform;
                 distanceNPC = Vector3.Distance(previousNPC.position, currentNPC.position);
+                float npcTime = Time.deltaTime * distanceNPC / minDistance * npcSpeed;
                 Vector3 newPositionNPC = previousNPC.position;
-                currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcSpeed * Time.deltaTime);
+                currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcTime);
+
             }
 
         }
@@ -116,8 +114,7 @@ public class Player : MonoBehaviour
         if (isGrounded = true && currentJump < extraJump)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
-            currentJump++;
-            
+            currentJump++;            
         }
     }
 
