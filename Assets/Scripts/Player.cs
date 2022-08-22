@@ -44,8 +44,7 @@ public class Player : MonoBehaviour
         }
 
         CheckGrounded();
-        NPCMOve();
-        Debug.Log(followingNPC.Count);
+        NPCMOve();        
     }
 
 
