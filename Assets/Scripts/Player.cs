@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     // данные игрока
     private Rigidbody2D playerRB; // rigid body игрока
     [SerializeField] private float speed; // скорость игрока
+    private float currentSpeed;
     [SerializeField] private float forceOfJump; // сила прыжка
     [SerializeField] private Transform groundTriger;
     [SerializeField] private LayerMask groundLayer;
@@ -30,14 +31,16 @@ public class Player : MonoBehaviour
         currentJump = 0;
         isGrounded = true;
         followingNPC.Add(gameObject);
+        
     }
 
 
 
     private void Update()
     {
+        
         npcSpeed = speed - 0.1f;
-        transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(5, 0, 0), speed * Time.deltaTime); ;
+        transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
@@ -115,6 +118,7 @@ public class Player : MonoBehaviour
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
             currentJump++;            
         }
+        
     }
 
 }
