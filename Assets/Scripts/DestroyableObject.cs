@@ -4,50 +4,53 @@ using UnityEngine;
 
 public class DestroyableObject : MonoBehaviour
 {
+    Player component; // необходим в тригере для определения с чем столкнулся разрушаемый объект
     private GameObject destroybaleObject;
     private Rigidbody2D objectRB;
     private Collider2D objectCol;
-    [SerializeField] private float force;
-    [SerializeField] private GameObject coin;
-    
-
-    
+    [SerializeField] private float force; // сила с которой улетает подьитый обхект
+    [SerializeField] private GameObject coin; // префаб монеты
+    private int randomCoins; // случайное количество монет выпадающих в подбитом объекте
+        
     
     private void Start()
     {
         destroybaleObject = GetComponent<GameObject>();
         objectRB = GetComponent<Rigidbody2D>();
         objectCol = GetComponent<Collider2D>();
-        
+        randomCoins = Random.Range(2, 5);        
     }
 
-    Player component;
+    
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("trigger");
+    {       
         if (collision.TryGetComponent<Player>(out component))
         {
             SmashObject();
-            CreateCoin(3);
-            
+            CreateCoin(randomCoins);            
         }
     }
 
+    /// <summary>
+    /// метод столкновения с объектом
+    /// </summary>
     private void SmashObject() 
     {
-        Debug.Log("smash");
         objectRB.AddForce(transform.up * force, ForceMode2D.Impulse);
         objectRB.gravityScale = 2f;
         GetComponent<Animator>().enabled = true;
     }
 
+    /// <summary>
+    /// метод генерации монет из подбитого объекта, принимает инт и генерирует по его значению количество монет
+    /// </summary>
+    /// <param name="amount"></param>
     private void CreateCoin(int amount) 
     {
         for (int i = 0; i < amount; i++)
         {
             GameObject smallCoin = Instantiate(coin, transform.position, Quaternion.identity);
-        }
-    
+        }    
     }
 
 }

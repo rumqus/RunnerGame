@@ -111,6 +111,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// метод прыжка и двойного прыжка
+    /// </summary>
     public void Jump()
     {
         if (isGrounded = true && currentJump < extraJump)
