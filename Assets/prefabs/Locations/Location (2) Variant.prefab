@@ -111,5 +111,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Location (2) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8795940736511459340, guid: 87f48038539f800419b180ee5268b790, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 9200362350907875344, guid: f87067122f965224abcc0e31e17b22a8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87f48038539f800419b180ee5268b790, type: 3}
