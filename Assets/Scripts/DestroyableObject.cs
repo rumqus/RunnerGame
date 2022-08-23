@@ -8,6 +8,7 @@ public class DestroyableObject : MonoBehaviour
     private Rigidbody2D objectRB;
     private Collider2D objectCol;
     [SerializeField] private float force;
+    [SerializeField] private GameObject coin;
     
 
     
@@ -17,7 +18,7 @@ public class DestroyableObject : MonoBehaviour
         destroybaleObject = GetComponent<GameObject>();
         objectRB = GetComponent<Rigidbody2D>();
         objectCol = GetComponent<Collider2D>();
-        //force = 5f;
+        
     }
 
     Player component;
@@ -27,6 +28,7 @@ public class DestroyableObject : MonoBehaviour
         if (collision.TryGetComponent<Player>(out component))
         {
             SmashObject();
+            CreateCoin(3);
             
         }
     }
@@ -37,8 +39,14 @@ public class DestroyableObject : MonoBehaviour
         objectRB.AddForce(transform.up * force, ForceMode2D.Impulse);
         objectRB.gravityScale = 2f;
         GetComponent<Animator>().enabled = true;
-        
+    }
 
+    private void CreateCoin(int amount) 
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject smallCoin = Instantiate(coin, transform.position, Quaternion.identity);
+        }
     
     }
 

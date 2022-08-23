@@ -6,6 +6,7 @@ public class NpcTeammate2 : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private List<GameObject> listNPC;
+    private Player component;
    
     private void Start()
     {
@@ -15,7 +16,7 @@ public class NpcTeammate2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.TryGetComponent<Player>(out component))
         {
             GetComponent<Collider2D>().enabled = false;
             listNPC.Add(gameObject);
