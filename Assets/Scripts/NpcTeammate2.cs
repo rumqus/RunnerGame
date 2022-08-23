@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class NpcTeammate2 : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] private List<GameObject> listNPC;
     private Player component;
    
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         listNPC = player.GetComponent<Player>().followingNPC;
         
     }
