@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8840726148644384589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6800003, y: -4.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da84698768464b40bb8c32c5a959f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3970214747680791200, guid: 64d0c271c4bc8e24788d7a7aafb645cf, type: 3}
   listNPC: []
 --- !u!58 &8840726148644384588
 CircleCollider2D:
