@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
         
         if (collision.gameObject.TryGetComponent<Player>(out component))
         {
+            Player.alive = false;
             component.gameObject.GetComponent<Player>().enabled = false;
             Debug.Log("FAIL - END GAME");
         }

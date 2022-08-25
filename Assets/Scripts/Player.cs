@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private bool isGrounded; // стоит ли на змеле
     private int extraJump = 1; // количество доп прыжков
     private int currentJump; // текущее количество совершенных прыжков
+    public static bool alive; // статус игрока жив или мертв
+    
 
    
     private void Start()
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
         currentJump = 0;
         isGrounded = true;
         followingNPC.Add(gameObject);
-        
+        alive = true;
     }
 
 
@@ -46,9 +48,9 @@ public class Player : MonoBehaviour
             Debug.Log("Прыжок");
             Jump();
         }
-
         CheckGrounded();
-        NPCMOve();        
+        NPCMOve();
+        CalculateDistance();        
     }
 
 
@@ -125,4 +127,14 @@ public class Player : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// оборачиваем статичный метод в метод подсчета дистанции пройденной игроком
+    /// </summary>
+    private void CalculateDistance() 
+    {
+        if (alive == true)
+        {
+            GameScores.maxDistance = (int)Mathf.Round(transform.position.x/2);
+        }          
+    }
 }

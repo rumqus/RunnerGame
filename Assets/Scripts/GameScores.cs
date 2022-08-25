@@ -6,8 +6,9 @@ public class GameScores : MonoBehaviour
     public static int maxDistance; // максимальный путь пройденный игроком
     public static int amountCoins; // количество собранных монет
     public static int amountSavedNPC; // количество собранных нпс
-    private Text savedNPC;
-    private Text collectedMoney;
+    [SerializeField] private Text savedNPC;
+    [SerializeField] private Text collectedMoney;
+    [SerializeField] private Text walkDistance;
 
     private void OnEnable()
     {
@@ -21,16 +22,29 @@ public class GameScores : MonoBehaviour
         Actions.countNPC -= SumSavedNPC;
     }
 
+    private void Update()
+    {
+        savedNPC.text = amountSavedNPC.ToString();
+        collectedMoney.text = amountCoins.ToString();
+        walkDistance.text = maxDistance.ToString();
+    }
+
     public static void SumCoins()
     {
         amountCoins++;
-        //Debug.Log( @$"всего монет_{amountCoins}");
+        
     }
 
     public static void SumSavedNPC() 
     {
         amountSavedNPC++;
         
+    }
+
+    public static void SumDistance() 
+    {
+        maxDistance++;
+    
     }
 
 }
