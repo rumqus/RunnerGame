@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameScores : MonoBehaviour
 {
     public static int maxDistance; // максимальный путь пройденный игроком
     public static int amountCoins; // количество собранных монет
     public static int amountSavedNPC; // количество собранных нпс
+    private Text savedNPC;
+    private Text collectedMoney;
 
     private void OnEnable()
     {
