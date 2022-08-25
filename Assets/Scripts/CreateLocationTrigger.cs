@@ -9,12 +9,14 @@ public class CreateLocationTrigger : MonoBehaviour
     private Vector3 shift;
     private int randomIndex;
     private GameObject[] locations;
+    [SerializeField] private GameObject parent;
 
     private void Start()
     {
         locations = gameManager.GetComponent<Locations>().levelLocations;
         shift = new Vector3(40,0,0);
         randomIndex = Random.Range(0, locations.Length);
+        Locations.runtimeLocations.Add(parent.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +25,7 @@ public class CreateLocationTrigger : MonoBehaviour
         {
             Debug.Log("Generate Level Location");
             GenerateLocation();
+            Locations.DelRuntimeLocation();
         }
     }
 

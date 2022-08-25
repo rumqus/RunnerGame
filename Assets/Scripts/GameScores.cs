@@ -27,7 +27,7 @@ public class GameScores : MonoBehaviour
     public static void SumSavedNPC() 
     {
         amountSavedNPC++;
-        Debug.Log(@$"всего всего спасено_{amountSavedNPC}");
+        
     }
 
 }
