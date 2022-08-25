@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Прыжок");
             Jump();
         }
         CheckGrounded();

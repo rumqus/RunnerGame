@@ -13,9 +13,7 @@ public class Locations : MonoBehaviour
     {
         if (runtimeLocations.Count >=2 )
         {
-            Destroy(runtimeLocations[runtimeLocations.Count - 2]);
-            
-        }
-    
+            Destroy(runtimeLocations[runtimeLocations.Count - 2]);            
+        }    
     }   
 }
