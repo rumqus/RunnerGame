@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9200362350907875346}
   - component: {fileID: 9200362350907875347}
   - component: {fileID: 9200362350907875437}
+  - component: {fileID: -1662364189926839588}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9200362350907875344}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fabe0ff33b1b747a3dacb1f3de8dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savedNPC: {fileID: 0}
+  collectedMoney: {fileID: 0}
+  walkDistance: {fileID: 0}
 --- !u!114 &9200362350907875437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,3 +65,16 @@ MonoBehaviour:
   - {fileID: 8061868975354472793, guid: 091964d2b371b9b499ef554ac1d03138, type: 3}
   - {fileID: 5273721422460734722, guid: d9640c0aa57ecf54da51564cb3745349, type: 3}
   - {fileID: 8143312796760100065, guid: 87f48038539f800419b180ee5268b790, type: 3}
+--- !u!114 &-1662364189926839588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200362350907875344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb337ab53188574d870814d9da904c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePanel: {fileID: 0}

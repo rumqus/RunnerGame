@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         
-        npcSpeed = speed - 0.1f;
+        npcSpeed = speed;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
     {
         if (alive == true)
         {
-            GameScores.maxDistance = (int)Mathf.Round(transform.position.x/2);
+            GameScores.maxDistance = (int)Mathf.Round(transform.position.x/3);
         }          
     }
 }
