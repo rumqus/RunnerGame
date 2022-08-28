@@ -17,6 +17,13 @@ public class UImenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void QuitGame(int index) 
+    {
+        StartGameButton.LoadScene(index);
+        
+    
+    }
+
 
 
 

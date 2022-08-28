@@ -7,4 +7,5 @@ public class Actions : MonoBehaviour
     public static Action countCoins; // делегат для подсчета монет
     public static Action countNPC; // делегат подсчета собранных нпс
     
+    
 }

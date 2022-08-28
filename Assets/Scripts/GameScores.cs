@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 public class GameScores : MonoBehaviour
@@ -15,7 +16,6 @@ public class GameScores : MonoBehaviour
         Actions.countCoins += SumCoins;
         Actions.countNPC += SumSavedNPC;
     }
-
     private void OnDisable()
     {
         Actions.countCoins -= SumCoins;
@@ -28,23 +28,18 @@ public class GameScores : MonoBehaviour
         collectedMoney.text = amountCoins.ToString();
         walkDistance.text = maxDistance.ToString();
     }
-
     public static void SumCoins()
     {
-        amountCoins++;
-        
+        amountCoins++;        
     }
-
     public static void SumSavedNPC() 
     {
-        amountSavedNPC++;
-        
+        amountSavedNPC++;        
     }
 
     public static void SumDistance() 
     {
-        maxDistance++;
-    
+        maxDistance++;    
     }
 
 }

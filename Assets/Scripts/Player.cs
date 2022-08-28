@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Transform previousNPC; // положение с которого npc начинате движение
 
     // данные игрока
-    private Rigidbody2D playerRB; // rigid body игрока
+    private Rigidbody2D playerRB; // rigidbody игрока
     [SerializeField] private float speed; // скорость игрока
     private float currentSpeed;
     [SerializeField] private float forceOfJump; // сила прыжка
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         
-        npcSpeed = speed;
+        npcSpeed = speed - 0.01f;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
