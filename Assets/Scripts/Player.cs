@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -23,8 +24,13 @@ public class Player : MonoBehaviour
     private int extraJump = 1; // количество доп прыжков
     private int currentJump; // текущее количество совершенных прыжков
     public static bool alive; // статус игрока жив или мертв
-    
 
+    //камера
+    [SerializeField] private CinemachineVirtualCamera camera;
+    private CinemachineFramingTransposer transposer;
+    
+    private float maxCameraDamping = 20f;
+    private float minCameraDamping = 1f;
    
     private void Start()
     {
@@ -34,6 +40,7 @@ public class Player : MonoBehaviour
         isGrounded = true;
         followingNPC.Add(gameObject);
         alive = true;
+        transposer = camera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
 
@@ -49,7 +56,8 @@ public class Player : MonoBehaviour
         }
         CheckGrounded();
         NPCMOve();
-        CalculateDistance();        
+        CalculateDistance();
+        ChangeCameraDamping();
     }
 
 
@@ -135,5 +143,18 @@ public class Player : MonoBehaviour
         {
             GameScores.maxDistance = (int)Mathf.Round(transform.position.x/3);
         }          
+    }
+
+    private void ChangeCameraDamping() 
+    {
+        if (isGrounded == true)
+        {
+            transposer.m_YDamping = minCameraDamping;
+        }
+        else 
+        {
+            transposer.m_YDamping = maxCameraDamping;
+        }
+    
     }
 }

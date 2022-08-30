@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 13
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -144,16 +144,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followingNPC: []
-  indexes: 
-  minDistance: 1
+  minDistance: 2
   npcSpeed: 1
   distanceNPC: 1
-  speed: 0
+  speed: 8
   forceOfJump: 4
   groundTriger: {fileID: 3970214747531774325}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  camera: {fileID: 0}
 --- !u!1 &3970214748178603672
 GameObject:
   m_ObjectHideFlags: 0
