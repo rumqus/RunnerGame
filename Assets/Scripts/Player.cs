@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private int extraJump = 1; // количество доп прыжков
     private int currentJump; // текущее количество совершенных прыжков
     public static bool alive; // статус игрока жив или мертв
+    [SerializeField] private Animator playerAnimator;
 
     //камера
     [SerializeField] private CinemachineVirtualCamera camera;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("ButtonJump");
             Jump();
         }
         CheckGrounded();
@@ -128,6 +130,7 @@ public class Player : MonoBehaviour
     {
         if (isGrounded = true && currentJump < extraJump)
         {
+            Debug.Log("jump");
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
             currentJump++;            
         }
@@ -144,6 +147,7 @@ public class Player : MonoBehaviour
             GameScores.maxDistance = (int)Mathf.Round(transform.position.x/3);
         }          
     }
+
 
     private void ChangeCameraDamping() 
     {

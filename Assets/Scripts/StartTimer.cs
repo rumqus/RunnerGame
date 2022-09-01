@@ -44,10 +44,6 @@ public class StartTimer : MonoBehaviour
 
         }
         float seconds = Mathf.FloorToInt(timeLeft % 60);
-        timerText.text = seconds.ToString();
-        
-        
-
-        
+        timerText.text = seconds.ToString();        
     }
 }
