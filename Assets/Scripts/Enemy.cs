@@ -8,21 +8,19 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.gameObject.TryGetComponent<Player>(out component))
         {
             Player.alive = false;
             Actions.startDeathAnimaion();
-            //StartCoroutine(DelayDeath());           
-            
-            //component.gameObject.GetComponent<Player>().enabled = false;
+            StartCoroutine(DelayDeath());
         }
     }
 
-    IEnumerator DelayDeath() 
+    IEnumerator DelayDeath()
     {
-        
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.433f);
+        component.gameObject.GetComponent<Player>().enabled = false;
         Debug.Log("FAIL - END GAME");
     }
 }
