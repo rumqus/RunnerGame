@@ -28,8 +28,7 @@ public class Player : MonoBehaviour
 
     //камера
     [SerializeField] private CinemachineVirtualCamera camera;
-    private CinemachineFramingTransposer transposer;
-    
+    private CinemachineFramingTransposer transposer;    
     private float maxCameraDamping = 20f;
     private float minCameraDamping = 1f;
    
