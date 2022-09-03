@@ -12,8 +12,17 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.TryGetComponent<Player>(out component))
         {
             Player.alive = false;
-            component.gameObject.GetComponent<Player>().enabled = false;
-            Debug.Log("FAIL - END GAME");
+            Actions.startDeathAnimaion();
+            //StartCoroutine(DelayDeath());           
+            
+            //component.gameObject.GetComponent<Player>().enabled = false;
         }
+    }
+
+    IEnumerator DelayDeath() 
+    {
+        
+        yield return new WaitForSeconds(3);
+        Debug.Log("FAIL - END GAME");
     }
 }

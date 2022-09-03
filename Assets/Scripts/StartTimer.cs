@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class StartTimer : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private float time;
+    public float time;
     [SerializeField] private Text timerText;
     private float timeLeft = 0f;
     private bool timerOn = false;
@@ -29,6 +29,7 @@ public class StartTimer : MonoBehaviour
             {
                 timeLeft = time;
                 timerOn = false;
+                Actions.startAnimation();
             }
         }
     }
@@ -46,4 +47,6 @@ public class StartTimer : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeLeft % 60);
         timerText.text = seconds.ToString();        
     }
+
+    
 }

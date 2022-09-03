@@ -31,7 +31,9 @@ public class Player : MonoBehaviour
     private CinemachineFramingTransposer transposer;    
     private float maxCameraDamping = 20f;
     private float minCameraDamping = 1f;
-   
+
+
+    
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -46,33 +48,36 @@ public class Player : MonoBehaviour
 
 
     private void Update()
-    {
-        
+    {        
         npcSpeed = speed - 0.01f;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("ButtonJump");
+           
             Jump();
+            
         }
         CheckGrounded();
         NPCMOve();
-        CalculateDistance();
-        ChangeCameraDamping();
+        CalculateDistance();        
+        ChangeCameraDamping();        
     }
 
 
     private void OnEnable()
     {
         Actions.addNPC += AddNPC;
+        Actions.startAnimation += StartAnimationRun;
+        Actions.startDeathAnimaion += StartDeathAnim;
     }
 
     private void OnDisable()
     {
         Actions.addNPC -= AddNPC;
+        Actions.startAnimation -= StartAnimationRun;
+        Actions.startDeathAnimaion -= StartDeathAnim;
+
     }
-
-
 
     /// <summary>
     /// метод добавления npc который следует за игроком.
@@ -98,12 +103,8 @@ public class Player : MonoBehaviour
                 float npcTime = Time.deltaTime * distanceNPC / minDistance * npcSpeed;
                 Vector3 newPositionNPC = previousNPC.position;
                 currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcTime);
-
             }
-
-        }
-        
-    
+        }   
     }
 
     /// <summary>
@@ -120,6 +121,7 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
         }
+        ChangeBoolAnimation();
     }
 
     /// <summary>
@@ -129,11 +131,10 @@ public class Player : MonoBehaviour
     {
         if (isGrounded = true && currentJump < extraJump)
         {
-            Debug.Log("jump");
+            
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
             currentJump++;            
-        }
-        
+        }        
     }
 
     /// <summary>
@@ -157,7 +158,33 @@ public class Player : MonoBehaviour
         else 
         {
             transposer.m_YDamping = maxCameraDamping;
+        }    
+    }
+
+    /// <summary>
+    /// Смена анимации прыжка и обратно
+    /// </summary>
+    private void ChangeBoolAnimation() 
+    {
+        if (isGrounded == false)
+        {
+            playerAnimator.SetBool("jumped", true);
+            Debug.Log(playerAnimator.GetBool("jumped"));
         }
-    
+        else 
+        {
+            playerAnimator.SetBool("jumped", false);
+        }
+        
+    }
+
+    private void StartAnimationRun()
+    {
+        playerAnimator.SetBool("run", true);
+    }
+
+    private void StartDeathAnim() 
+    {
+        playerAnimator.SetBool("death", true);
     }
 }
