@@ -22,8 +22,8 @@ public class Locations : MonoBehaviour
     {
         if (runtimeLocations.Count >=3 )
         {
-            Destroy(runtimeLocations[runtimeLocations.Count - 2]);
-            runtimeLocations.RemoveAt(runtimeLocations.Count - 2);                        
+            Destroy(runtimeLocations[runtimeLocations.Count - 3]);
+            runtimeLocations.RemoveAt(runtimeLocations.Count - 3);                        
         }    
     }   
 }

@@ -30,8 +30,8 @@ public class NpcTeammate2 : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             harvested = true;
             listNPC.Add(gameObject);
-            //Actions.addNPC();
             Actions.countNPC();
+            
             
         }
     }

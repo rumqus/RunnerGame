@@ -19,7 +19,7 @@ public class LocationsV2 : MonoBehaviour
     private void Update()
     {
         speed = Locations.locationSpeed;
-        transform.position = Vector2.MoveTowards(transform.position, transform.right * -40, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, transform.right * -80, speed * Time.deltaTime);
     }
 
     /// <summary>
@@ -28,7 +28,7 @@ public class LocationsV2 : MonoBehaviour
     private void IncreaseSpeeds()
     {
         Locations.index++;
-        if (Locations.index % 3 == 0 && Locations.locationSpeed < 30)
+        if (Locations.index % 3 == 0 && Locations.locationSpeed < 25)
         {
             Locations.locationSpeed += 0.25f;
         }

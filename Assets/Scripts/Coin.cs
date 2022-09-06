@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        randomForce = Random.Range(12, 19) + (int)Locations.locationSpeed/2;
+        randomForce = Random.Range(12, 18) + (int)Locations.locationSpeed/2;
         coinRB = GetComponent<Rigidbody2D>();
         MoveCoin();
         
