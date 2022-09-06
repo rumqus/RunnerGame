@@ -63,10 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a92f1c9baedc7418a6f788d06fee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  locationSpeed: 3.86
   levelLocations:
-  - {fileID: 8061868975354472793, guid: 091964d2b371b9b499ef554ac1d03138, type: 3}
-  - {fileID: 5273721422460734722, guid: d9640c0aa57ecf54da51564cb3745349, type: 3}
-  - {fileID: 8143312796760100065, guid: 87f48038539f800419b180ee5268b790, type: 3}
+  - {fileID: 6101436135638075623, guid: 37dd707caca76ff4dab4550edee05942, type: 3}
+  - {fileID: 8261172599930984698, guid: eb9ff94adfa7e974d86e72140a8c01b8, type: 3}
+  - {fileID: 1388075711508829544, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
 --- !u!114 &-1662364189926839588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9efe5c7db3e9004db1146e82cc31a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   time: 4
   timerText: {fileID: 0}
 --- !u!114 &3619716363852375056

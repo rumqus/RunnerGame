@@ -50,6 +50,7 @@ public class DestroyableObject : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject smallCoin = Instantiate(coin, transform.position, Quaternion.identity);
+            smallCoin.transform.SetParent(gameObject.transform, true);
         }    
     }
 

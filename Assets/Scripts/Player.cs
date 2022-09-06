@@ -169,13 +169,12 @@ public class Player : MonoBehaviour
         if (isGrounded == false)
         {
             playerAnimator.SetBool("jumped", true);
-            Debug.Log(playerAnimator.GetBool("jumped"));
+            
         }
         else 
         {
             playerAnimator.SetBool("jumped", false);
-        }
-        
+        }        
     }
 
     private void StartAnimationRun()
