@@ -8,6 +8,9 @@ public class Coin : MonoBehaviour
     private Rigidbody2D coinRB; // Рригидбоди монетки
     private int randomForce; // случайная сила с которой монетка улетает при появлении
     [SerializeField] private float lifeTime; // время жизни монетки
+    private float maxRandom;
+    private float minRandom;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,10 +23,11 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        randomForce = Random.Range(12, 18) + (int)Locations.locationSpeed/2;
+        SetCoinPushSpeed();
+        maxRandom = Random.Range(0.5f,1f);
+        minRandom = Random.Range(0.5f, 0.7f); 
         coinRB = GetComponent<Rigidbody2D>();
-        MoveCoin();
-        
+        MoveCoin();        
     }
 
     private void Update()
@@ -31,12 +35,32 @@ public class Coin : MonoBehaviour
         DestoyCoin();
     }
 
+    private void SetCoinPushSpeed() 
+    {
+        if (Locations.locationSpeed > 20)
+        {
+            randomForce = Random.Range(23,25);
+        }
+        else
+        {
+            randomForce = Random.Range(20, 25);
+        }
+    }
+
     /// <summary>
     /// метод движения моентки при появлении
     /// </summary>
     private void MoveCoin() 
     {
-        coinRB.AddForceAtPosition(new Vector2(1,1) * randomForce, transform.position + new Vector3(5,5,0),ForceMode2D.Impulse);
+        if (Locations.locationSpeed > 20)
+        {
+            coinRB.AddForceAtPosition(new Vector2(1.1f, minRandom) * randomForce, transform.position + new Vector3(8, 5, 0), ForceMode2D.Impulse);
+        }
+        else 
+        {
+            coinRB.AddForceAtPosition(new Vector2(1, maxRandom) * randomForce, transform.position + new Vector3(5, 5, 0), ForceMode2D.Impulse);
+        }
+        
         coinRB.gravityScale = 3f;
     }
 

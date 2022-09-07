@@ -9,7 +9,6 @@ public class LocationsV2 : MonoBehaviour
     private void OnEnable()
     {
         Actions.IncreaseSpeed += IncreaseSpeeds;
-
     }
     private void OnDisable()
     {

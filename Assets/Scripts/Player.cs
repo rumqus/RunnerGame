@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {        
-        npcSpeed = speed - 0.01f;
+        npcSpeed = 5f;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {

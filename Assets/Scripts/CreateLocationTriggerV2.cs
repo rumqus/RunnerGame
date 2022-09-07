@@ -22,12 +22,10 @@ public class CreateLocationTriggerV2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<Player>(out component))
-        {
-            
+        {            
             GenerateLocation();
             Locations.DelRuntimeLocation();
             Actions.IncreaseSpeed();
-
         }
     }
 
@@ -37,6 +35,5 @@ public class CreateLocationTriggerV2 : MonoBehaviour
     private void GenerateLocation() 
     {
        Instantiate(locations[randomIndex], transform.position + shift, Quaternion.identity);
-
     }
 }

@@ -252,7 +252,7 @@ MonoBehaviour:
   minDistance: 2
   npcSpeed: 1
   distanceNPC: 1
-  speed: 8
+  speed: 0
   forceOfJump: 4
   groundTriger: {fileID: 3970214747531774325}
   groundLayer:
