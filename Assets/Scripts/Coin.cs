@@ -39,7 +39,7 @@ public class Coin : MonoBehaviour
     {
         if (Locations.locationSpeed > 20)
         {
-            randomForce = Random.Range(23,25);
+            randomForce = Random.Range(25,35);
         }
         else
         {
@@ -54,13 +54,13 @@ public class Coin : MonoBehaviour
     {
         if (Locations.locationSpeed > 20)
         {
-            coinRB.AddForceAtPosition(new Vector2(1.1f, minRandom) * randomForce, transform.position + new Vector3(8, 5, 0), ForceMode2D.Impulse);
+            coinRB.AddForceAtPosition(new Vector2(1f, minRandom) * randomForce, transform.position + new Vector3(10, 5, 0), ForceMode2D.Impulse);
+            
         }
-        else 
+        else if (Locations.locationSpeed < 20)
         {
             coinRB.AddForceAtPosition(new Vector2(1, maxRandom) * randomForce, transform.position + new Vector3(5, 5, 0), ForceMode2D.Impulse);
         }
-        
         coinRB.gravityScale = 3f;
     }
 

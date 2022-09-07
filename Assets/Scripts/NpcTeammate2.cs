@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NpcTeammate2 : MonoBehaviour
 {
     private GameObject player;
+    [SerializeField]private Scene scene;
     [SerializeField] private List<GameObject> listNPC;
     private Player component;
     bool harvested;
@@ -31,6 +33,7 @@ public class NpcTeammate2 : MonoBehaviour
             harvested = true;
             listNPC.Add(gameObject);
             Actions.countNPC();
+            gameObject.transform.parent = null;
             
             
         }

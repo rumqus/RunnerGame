@@ -11,7 +11,7 @@ public class Locations : MonoBehaviour
 
     private void Start()
     {
-        locationSpeed = 15;
+        locationSpeed = 0;
     }
 
 

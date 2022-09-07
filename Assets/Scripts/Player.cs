@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
                 previousNPC = followingNPC[i - 1].transform;
                 distanceNPC = Vector3.Distance(previousNPC.position, currentNPC.position);
                 float npcTime = Time.deltaTime * distanceNPC / minDistance * npcSpeed;
-                Vector3 newPositionNPC = previousNPC.position;
+                Vector3 newPositionNPC = previousNPC.position - new Vector3(1,0,0);
                 currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcTime);
             }
         }   
