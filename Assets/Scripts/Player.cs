@@ -85,7 +85,10 @@ public class Player : MonoBehaviour
     private void AddNPC() 
     {        
         GameObject npc = Instantiate(followingNPC[followingNPC.Count - 1], followingNPC[followingNPC.Count - 1].transform.position, followingNPC[followingNPC.Count - 1].transform.rotation);
+        TrimFolloowingNPCList();
         Destroy(npc);
+        
+        
     }
 
     /// <summary>
@@ -101,7 +104,7 @@ public class Player : MonoBehaviour
                 previousNPC = followingNPC[i - 1].transform;
                 distanceNPC = Vector3.Distance(previousNPC.position, currentNPC.position);
                 float npcTime = Time.deltaTime * distanceNPC / minDistance * npcSpeed;
-                Vector3 newPositionNPC = previousNPC.position - new Vector3(1,0,0);
+                Vector3 newPositionNPC = previousNPC.position - new Vector3(2f,0,0);
                 currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcTime);
             }
         }   
@@ -177,6 +180,21 @@ public class Player : MonoBehaviour
         }        
     }
 
+    private void TrimFolloowingNPCList() 
+    {
+        if (followingNPC.Count > 5)
+        {
+            Debug.Log("больше 5");
+            for (int i = 5; i < followingNPC.Count; i++)
+            {
+                Destroy(followingNPC[i]);
+                followingNPC.Capacity = followingNPC.Count - 1;
+                Debug.Log("Удалено");
+            }
+        }
+    
+    }
+
     private void StartAnimationRun()
     {
         playerAnimator.SetBool("run", true);
@@ -186,4 +204,7 @@ public class Player : MonoBehaviour
     {
         playerAnimator.SetBool("death", true);
     }
+
+
+
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NpcTeammate2 : MonoBehaviour
 {
     private GameObject player;
-    [SerializeField]private Scene scene;
+    [SerializeField] private Scene scene;
     [SerializeField] private List<GameObject> listNPC;
     private Player component;
     bool harvested;
@@ -16,8 +16,7 @@ public class NpcTeammate2 : MonoBehaviour
     {
         lifeTimer = 10f;
         player = GameObject.FindGameObjectWithTag("Player");
-        listNPC = player.GetComponent<Player>().followingNPC;
-        
+        listNPC = player.GetComponent<Player>().followingNPC;        
     }
 
     private void Update()
@@ -31,14 +30,11 @@ public class NpcTeammate2 : MonoBehaviour
         {
             GetComponent<Collider2D>().enabled = false;
             harvested = true;
-            listNPC.Add(gameObject);
+            listNPC.Add(gameObject);                     
             Actions.countNPC();
-            gameObject.transform.parent = null;
-            
-            
+            gameObject.transform.parent = null;           
         }
     }
-
 
     /// <summary>
     /// удаление дружественных нпс по таймеру
@@ -49,8 +45,7 @@ public class NpcTeammate2 : MonoBehaviour
         if (harvested == false && lifeTimer <= 0)
         {
             Destroy(gameObject);
-        }
-    
+        }    
     }
 
 }
