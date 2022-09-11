@@ -31,7 +31,7 @@ public class LocationsV2 : MonoBehaviour
         {
             Locations.locationSpeed += 0.25f;
         }
-        Debug.Log(Locations.locationSpeed);
+        //Debug.Log(Locations.locationSpeed);
     }
 
 }

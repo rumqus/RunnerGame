@@ -28,12 +28,12 @@ public class Player : MonoBehaviour
 
     //камера
     [SerializeField] private CinemachineVirtualCamera camera;
-    private CinemachineFramingTransposer transposer;    
+    private CinemachineFramingTransposer transposer;
     private float maxCameraDamping = 20f;
     private float minCameraDamping = 1f;
 
 
-    
+
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -48,19 +48,19 @@ public class Player : MonoBehaviour
 
 
     private void Update()
-    {        
+    {
         npcSpeed = 5f;
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
-           
+
             Jump();
-            
+
         }
         CheckGrounded();
         NPCMOve();
-        CalculateDistance();        
-        ChangeCameraDamping();        
+        CalculateDistance();
+        ChangeCameraDamping();
     }
 
 
@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
         Actions.addNPC += AddNPC;
         Actions.startAnimation += StartAnimationRun;
         Actions.startDeathAnimaion += StartDeathAnim;
+        Actions.trimChainNPC += TrimFolloowingNPCList;
     }
 
     private void OnDisable()
@@ -76,25 +77,23 @@ public class Player : MonoBehaviour
         Actions.addNPC -= AddNPC;
         Actions.startAnimation -= StartAnimationRun;
         Actions.startDeathAnimaion -= StartDeathAnim;
+        Actions.trimChainNPC -= TrimFolloowingNPCList;
 
     }
 
     /// <summary>
     /// метод добавления npc который следует за игроком.
     /// </summary>
-    private void AddNPC() 
-    {        
+    private void AddNPC()
+    {
         GameObject npc = Instantiate(followingNPC[followingNPC.Count - 1], followingNPC[followingNPC.Count - 1].transform.position, followingNPC[followingNPC.Count - 1].transform.rotation);
-        TrimFolloowingNPCList();
         Destroy(npc);
-        
-        
     }
 
     /// <summary>
     /// метод следования за игроком
     /// </summary>
-    private void NPCMOve() 
+    private void NPCMOve()
     {
         if (followingNPC.Count > 1) // проверем список нпс - что бы был больше 1 начального объекта игррока
         {
@@ -104,10 +103,10 @@ public class Player : MonoBehaviour
                 previousNPC = followingNPC[i - 1].transform;
                 distanceNPC = Vector3.Distance(previousNPC.position, currentNPC.position);
                 float npcTime = Time.deltaTime * distanceNPC / minDistance * npcSpeed;
-                Vector3 newPositionNPC = previousNPC.position - new Vector3(2f,0,0);
+                Vector3 newPositionNPC = previousNPC.position - new Vector3(2f, 0, 0);
                 currentNPC.position = Vector3.Slerp(currentNPC.position, newPositionNPC, npcTime);
             }
-        }   
+        }
     }
 
     /// <summary>
@@ -134,65 +133,65 @@ public class Player : MonoBehaviour
     {
         if (isGrounded = true && currentJump < extraJump)
         {
-            
+
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
-            currentJump++;            
-        }        
+            currentJump++;
+        }
     }
 
     /// <summary>
     /// оборачиваем статичный метод в метод подсчета дистанции пройденной игроком
     /// </summary>
-    private void CalculateDistance() 
+    private void CalculateDistance()
     {
         if (alive == true)
         {
-            GameScores.maxDistance = (int)Mathf.Round(transform.position.x/3);
-        }          
+            GameScores.maxDistance = (int)Mathf.Round(transform.position.x / 3);
+        }
     }
 
 
-    private void ChangeCameraDamping() 
+    private void ChangeCameraDamping()
     {
         if (isGrounded == true)
         {
             transposer.m_YDamping = minCameraDamping;
         }
-        else 
+        else
         {
             transposer.m_YDamping = maxCameraDamping;
-        }    
+        }
     }
 
     /// <summary>
     /// Смена анимации прыжка и обратно
     /// </summary>
-    private void ChangeBoolAnimation() 
+    private void ChangeBoolAnimation()
     {
         if (isGrounded == false)
         {
             playerAnimator.SetBool("jumped", true);
-            
+
         }
-        else 
+        else
         {
             playerAnimator.SetBool("jumped", false);
-        }        
+        }
     }
-
-    private void TrimFolloowingNPCList() 
-    {
-        if (followingNPC.Count > 5)
-        {
-            Debug.Log("больше 5");
-            for (int i = 5; i < followingNPC.Count; i++)
-            {
+    
+    /// <summary>
+    /// метод удаления лишних объектов
+    /// </summary>
+    private void TrimFolloowingNPCList()
+    {      
+        if (followingNPC.Count > 10)
+        {            
+            for (int i = 10; i < followingNPC.Count; i++)
+            {              
                 Destroy(followingNPC[i]);
-                followingNPC.Capacity = followingNPC.Count - 1;
-                Debug.Log("Удалено");
+                followingNPC.RemoveAt(followingNPC.Count - 1);                
             }
         }
-    
     }
 
     private void StartAnimationRun()
@@ -200,11 +199,8 @@ public class Player : MonoBehaviour
         playerAnimator.SetBool("run", true);
     }
 
-    private void StartDeathAnim() 
+    private void StartDeathAnim()
     {
         playerAnimator.SetBool("death", true);
     }
-
-
-
 }

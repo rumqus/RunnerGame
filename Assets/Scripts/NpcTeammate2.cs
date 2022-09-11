@@ -32,7 +32,8 @@ public class NpcTeammate2 : MonoBehaviour
             harvested = true;
             listNPC.Add(gameObject);                     
             Actions.countNPC();
-            gameObject.transform.parent = null;           
+            gameObject.transform.parent = null;
+            Actions.trimChainNPC();
         }
     }
 
