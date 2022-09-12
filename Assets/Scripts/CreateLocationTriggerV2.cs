@@ -26,12 +26,10 @@ public class CreateLocationTriggerV2 : MonoBehaviour
             GenerateLocation();
             Locations.DelRuntimeLocation();
             Actions.IncreaseSpeed();
+            Actions.distance();
         }
     }
-
-   
-
-
+    
     private void GenerateLocation() 
     {
        Instantiate(locations[randomIndex], transform.position + shift, Quaternion.identity);

@@ -15,11 +15,20 @@ public class GameScores : MonoBehaviour
     {
         Actions.countCoins += SumCoins;
         Actions.countNPC += SumSavedNPC;
+        Actions.distance += SumDistance;
+
+
     }
     private void OnDisable()
     {
         Actions.countCoins -= SumCoins;
         Actions.countNPC -= SumSavedNPC;
+        Actions.distance -= SumDistance;        
+    }
+
+    public static void SumDistance()
+    {
+        maxDistance = maxDistance + 5;
     }
 
     private void Update()
@@ -28,18 +37,17 @@ public class GameScores : MonoBehaviour
         collectedMoney.text = amountCoins.ToString();
         walkDistance.text = maxDistance.ToString();
     }
+
     public static void SumCoins()
     {
         amountCoins++;        
     }
+
     public static void SumSavedNPC() 
     {
         amountSavedNPC++;        
     }
 
-    public static void SumDistance() 
-    {
-        maxDistance++;    
-    }
+    
 
 }

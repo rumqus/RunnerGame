@@ -53,13 +53,10 @@ public class Player : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, transform.position + new Vector3(1, 0, 0), speed * Time.deltaTime); ;
         if (Input.GetButtonDown("Jump"))
         {
-
             Jump();
-
         }
         CheckGrounded();
         NPCMOve();
-        CalculateDistance();
         ChangeCameraDamping();
     }
 
@@ -142,13 +139,13 @@ public class Player : MonoBehaviour
     /// <summary>
     /// оборачиваем статичный метод в метод подсчета дистанции пройденной игроком
     /// </summary>
-    private void CalculateDistance()
-    {
-        if (alive == true)
-        {
-            GameScores.maxDistance = (int)Mathf.Round(transform.position.x / 3);
-        }
-    }
+    //private void CalculateDistance()
+    //{
+    //    if (alive == true)
+    //    {
+    //        GameScores.maxDistance = (int)Mathf.Round(transform.position.x / 3);
+    //    }
+    //}
 
 
     private void ChangeCameraDamping()
