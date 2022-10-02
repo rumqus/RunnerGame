@@ -236,7 +236,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786459, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2341,6 +2341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 135159760992955356, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 03389f9171986c4418fde0dd8fbffc3c, type: 2}
     - target: {fileID: 1388075710490701130, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
       propertyPath: gameManager
       value: 
@@ -2397,6 +2401,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2150615480950131144, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 03389f9171986c4418fde0dd8fbffc3c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
 --- !u!1001 &3970214748368864060

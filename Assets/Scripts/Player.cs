@@ -134,19 +134,7 @@ public class Player : MonoBehaviour
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
             currentJump++;
         }
-    }
-
-    /// <summary>
-    /// оборачиваем статичный метод в метод подсчета дистанции пройденной игроком
-    /// </summary>
-    //private void CalculateDistance()
-    //{
-    //    if (alive == true)
-    //    {
-    //        GameScores.maxDistance = (int)Mathf.Round(transform.position.x / 3);
-    //    }
-    //}
-
+    }    
 
     private void ChangeCameraDamping()
     {
@@ -168,7 +156,6 @@ public class Player : MonoBehaviour
         if (isGrounded == false)
         {
             playerAnimator.SetBool("jumped", true);
-
         }
         else
         {
