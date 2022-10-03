@@ -48,6 +48,13 @@ public class GameScores : MonoBehaviour
         amountSavedNPC++;        
     }
 
+    public static void NullScore() 
+    {
+        maxDistance = 0;
+        amountCoins = 0;
+        amountSavedNPC = 0;
+    }
+
     
 
 }

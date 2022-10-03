@@ -16,9 +16,9 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(int sceneIndex) 
     {
         Time.timeScale = 1f;
-        //animator.enabled = true;
         animator.SetTrigger("start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(sceneIndex);            
+        SceneManager.LoadScene(sceneIndex);
+        GameScores.NullScore(); // обнуляем текущие результаты
     }
 }
