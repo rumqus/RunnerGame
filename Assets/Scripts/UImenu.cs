@@ -1,25 +1,37 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class UImenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject pauseText;
-    [SerializeField] private GameObject endGameText;
     [SerializeField] private GameObject endScorePanel;
     [SerializeField] private Text savedNPC;
     [SerializeField] private Text money;
     [SerializeField] private Text distance;
     [SerializeField] private Button resume;
+    private float speedCounting;
+    private float tempScore;
 
-    private void Start()
+    private void Awake()
     {
         pauseText.SetActive(false);
-        endGameText.SetActive(false);
         endScorePanel.SetActive(false);
         resume.interactable = true;
-
+        speedCounting = 0.1f;
     }
+
+    private void OnEnable()
+    {
+        Actions.endGame += CheckEndGame;
+    }
+    private void OnDisable()
+    {
+        Actions.endGame -= CheckEndGame;
+    }
+        
 
     public void PauseGame()
     {
@@ -38,45 +50,40 @@ public class UImenu : MonoBehaviour
         StartGameButton.LoadScene(index);    
     }
 
-    private void CheckEndGame() 
+    public void CheckEndGame() 
     {
         if (Player.alive == false)
         {
+            Time.timeScale = 0;
+            pausePanel.SetActive(true);
             pauseText.SetActive(false);
-            endGameText.SetActive(true);
             endScorePanel.SetActive(true);
             RunningScores();
             resume.interactable = false;
-        }
-        else 
-        {
-            pauseText.SetActive(true);
-        }
-    
+        }           
     }
     /// <summary>
-    /// бегущий текст  в финальных очках
+    /// бегущие очки  в финальных очках
     /// </summary>
     private void RunningScores() 
     {
-        for (int i = 0; i <= GameScores.amountSavedNPC; i++)
+        StartCoroutine(CountUp(GameScores.amountSavedNPC, savedNPC));
+        StartCoroutine(CountUp(GameScores.amountCoins, money));
+        StartCoroutine(CountUp(GameScores.maxDistance, distance));
+    }
+
+    IEnumerator CountUp(int targetScore, Text targetScoreDisplay)
+    {
+        while (tempScore < targetScore)
         {
-            savedNPC.text = i.ToString();
+            tempScore += speedCounting;
+            tempScore = Mathf.Clamp(tempScore, 0f, targetScore);
+            targetScoreDisplay.text = tempScore.ToString("0");
+            yield return null;
         }
-        for (int j = 0; j <= GameScores.amountCoins; j++)
-        {
-            money.text = j.ToString();
-        }
-        for (int k = 0; k <= GameScores.maxDistance; k++)
-        {
-            distance.text = k.ToString();
-        }
+    }
+
     
-    
-    } 
-
-
-
 
 
 }

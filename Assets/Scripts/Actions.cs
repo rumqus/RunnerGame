@@ -11,5 +11,6 @@ public class Actions : MonoBehaviour
     public static Action startDeathAnimaion; // делегат для запуска анимации смерти
     public static Action IncreaseSpeed; // увеличиваем скорость
     public static Action trimChainNPC; // делегат для удаления лишних npc
+    public static Action endGame;
     
 }
