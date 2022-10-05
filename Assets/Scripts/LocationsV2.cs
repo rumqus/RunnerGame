@@ -19,6 +19,7 @@ public class LocationsV2 : MonoBehaviour
     {
         speed = Locations.locationSpeed;
         transform.position = Vector2.MoveTowards(transform.position, transform.right * -80, speed * Time.deltaTime);
+        
     }
 
     /// <summary>
@@ -30,7 +31,11 @@ public class LocationsV2 : MonoBehaviour
         if (Locations.index % 3 == 0 && Locations.locationSpeed < 25)
         {
             Locations.locationSpeed += 0.25f;
+            Debug.Log(@$"скорость {Locations.index}");
+            Debug.Log(@$"index {Locations.locationSpeed}");
         }
+       
+        
        
     }
 
