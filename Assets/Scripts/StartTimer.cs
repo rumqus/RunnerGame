@@ -30,7 +30,7 @@ public class StartTimer : MonoBehaviour
                 timeLeft = time;
                 timerOn = false;
                 Actions.startAnimation();
-                Locations.locationSpeed = 18f;
+                Locations.locationSpeed = 15f;
             }
         }
     }

@@ -11,6 +11,7 @@ public class DestroyableObject : MonoBehaviour
     [SerializeField] private float force; // сила с которой улетает подьитый обхект
     [SerializeField] private GameObject coin; // префаб монеты
     private int randomCoins; // случайное количество монет выпадающих в подбитом объекте
+    private ParticleSystem partisiple;
         
     
     private void Start()
@@ -38,7 +39,7 @@ public class DestroyableObject : MonoBehaviour
     {
         objectRB.AddForce(transform.up * force, ForceMode2D.Impulse);
         objectRB.gravityScale = 2f;
-        GetComponent<Animator>().enabled = true;
+        GetComponent<Animator>().enabled = true;        
     }
 
     /// <summary>
