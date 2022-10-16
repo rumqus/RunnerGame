@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5096260623579220963}
   - component: {fileID: 5096260623579220960}
   m_Layer: 0
-  m_Name: cat3
+  m_Name: cat5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,12 +139,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1104143900, guid: 6ae66f45a5c06c745abea3191d4ecf03, type: 3}
+  m_Sprite: {fileID: 899294166, guid: 38ab5c9f8a4c38e47a748dc3604e98ad, type: 3}
   m_Color: {r: 0.9716981, g: 0.9606438, b: 0.9487807, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 5.004883}
+  m_Size: {x: 5, y: 3.0019288}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -160,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 6135476166952713509}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 03389f9171986c4418fde0dd8fbffc3c, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1c56c5f11d6eb9942a97f9a63e46d25b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
