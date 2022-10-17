@@ -21,8 +21,6 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(0.433f);
         Actions.endGame();
-        component.gameObject.GetComponent<Player>().enabled = false;
-        
-        Debug.Log("FAIL - END GAME");
+        component.gameObject.GetComponent<Player>().enabled = false;       
     }
 }

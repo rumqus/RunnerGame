@@ -30,9 +30,7 @@ public class LocationsV2 : MonoBehaviour
         Locations.index++;
         if (Locations.index % 3 == 0 && Locations.locationSpeed < 25)
         {
-            Locations.locationSpeed += 0.25f;
-            Debug.Log(@$"скорость {Locations.index}");
-            Debug.Log(@$"index {Locations.locationSpeed}");
+            Locations.locationSpeed += 0.25f;            
         }
        
         

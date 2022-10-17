@@ -16,9 +16,8 @@ public class GameScores : MonoBehaviour
         Actions.countCoins += SumCoins;
         Actions.countNPC += SumSavedNPC;
         Actions.distance += SumDistance;
-
-
     }
+
     private void OnDisable()
     {
         Actions.countCoins -= SumCoins;
