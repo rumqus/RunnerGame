@@ -54,7 +54,7 @@ namespace cakeslice
 		public Color lineColor0 = Color.red;
 		public Color lineColor1 = Color.green;
 		public Color lineColor2 = Color.blue;
-
+		
 		public bool additiveRendering = false;
 
 		public bool backfaceCulling = true;
@@ -358,7 +358,7 @@ namespace cakeslice
 			if (outline2Material == null)
 				outline2Material = CreateMaterial(new Color(0, 1, 0, 0));
 			if (outline3Material == null)
-				outline3Material = CreateMaterial(new Color(0, 0, 1, 0));
+				outline3Material = CreateMaterial(new Color(0, 0, 1, 0));			
 		}
 
 		private void DestroyMaterials()
@@ -378,6 +378,7 @@ namespace cakeslice
 			outline1Material = null;
 			outline2Material = null;
 			outline3Material = null;
+			
 		}
 
 		public void UpdateMaterialsPublicProperties()
