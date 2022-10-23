@@ -2631,9 +2631,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.88235295, g: 0.36862746, b: 0.015686275, a: 1}
+    m_NormalColor: {r: 1, g: 0.9882353, b: 0, a: 1}
     m_HighlightedColor: {r: 0.8039216, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 0.8509804, b: 0, a: 1}
+    m_PressedColor: {r: 0.8862745, g: 0.3019608, b: 0.15294118, a: 1}
     m_SelectedColor: {r: 1, g: 0.8509804, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2679,15 +2679,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.88235295, g: 0.36862746, b: 0.015686275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b5e8d933706b4264680ac31f33d372d1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3386,6 +3386,14 @@ PrefabInstance:
       propertyPath: locationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9200362350907875437, guid: f87067122f965224abcc0e31e17b22a8, type: 3}
+      propertyPath: levelLocations.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200362350907875437, guid: f87067122f965224abcc0e31e17b22a8, type: 3}
+      propertyPath: levelLocations.Array.data[3]
+      value: 
+      objectReference: {fileID: 1388075711508829544, guid: d420322ad9dd96e44b3cf4f6fccbc2b3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f87067122f965224abcc0e31e17b22a8, type: 3}
 --- !u!114 &9200362352992532142 stripped
