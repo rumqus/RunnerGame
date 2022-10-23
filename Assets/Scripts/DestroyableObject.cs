@@ -12,6 +12,8 @@ public class DestroyableObject : MonoBehaviour
     [SerializeField] private GameObject coin; // префаб монеты
     private int randomCoins; // случайное количество монет выпадающих в подбитом объекте
     private ParticleSystem partisiple;
+    private SpriteRenderer spriteRender;
+    [SerializeField] private Sprite destroyedSprite;
         
     
     private void Start()
@@ -19,7 +21,8 @@ public class DestroyableObject : MonoBehaviour
         destroybaleObject = GetComponent<GameObject>();
         objectRB = GetComponent<Rigidbody2D>();
         objectCol = GetComponent<Collider2D>();
-        randomCoins = Random.Range(2, 5);        
+        randomCoins = Random.Range(2, 5);
+        spriteRender = GetComponentInChildren<SpriteRenderer>();
     }
 
     
@@ -32,6 +35,13 @@ public class DestroyableObject : MonoBehaviour
         }
     }
 
+    private void ChangeSprite() 
+    {
+        spriteRender.sprite = destroyedSprite;    
+    
+    }
+
+
     /// <summary>
     /// метод столкновения с объектом
     /// </summary>
@@ -39,7 +49,8 @@ public class DestroyableObject : MonoBehaviour
     {
         objectRB.AddForce(transform.up * force, ForceMode2D.Impulse);
         objectRB.gravityScale = 2f;
-        GetComponent<Animator>().enabled = true;        
+        GetComponent<Animator>().enabled = true;
+        ChangeSprite();
     }
 
     /// <summary>

@@ -1198,12 +1198,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineThickness: 1.25
-  lineIntensity: 1.28
+  lineThickness: 1
+  lineIntensity: 2
   fillAmount: 0.2
-  lineColor0: {r: 1, g: 0.96559095, b: 0, a: 1}
+  lineColor0: {r: 1, g: 0.96559095, b: 0, a: 0.6117647}
   lineColor1: {r: 0.9811321, g: 0.18709622, b: 0.17123532, a: 1}
-  lineColor2: {r: 0, g: 0, b: 1, a: 1}
+  lineColor2: {r: 0.5594044, g: 0.9622642, b: 0.36765754, a: 0.5058824}
   additiveRendering: 0
   backfaceCulling: 1
   fillColor: {r: 0, g: 0, b: 1, a: 1}
@@ -3128,6 +3128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 103046494678953392, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.45
+      objectReference: {fileID: 0}
     - target: {fileID: 135159760992955356, guid: f42399676c4c51948a4556cdf4e8f056, type: 3}
       propertyPath: m_Controller
       value: 
