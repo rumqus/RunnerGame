@@ -18,7 +18,7 @@ public class SoundButton : MonoBehaviour
     {
         // something that on\off sound
         ChangeSprite();
-        Debug.Log(currentSprite.sprite.name);
+        
     }
 
 
