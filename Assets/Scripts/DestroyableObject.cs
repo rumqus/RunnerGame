@@ -21,7 +21,7 @@ public class DestroyableObject : MonoBehaviour
         destroybaleObject = GetComponent<GameObject>();
         objectRB = GetComponent<Rigidbody2D>();
         objectCol = GetComponent<Collider2D>();
-        randomCoins = Random.Range(2, 5);
+        randomCoins = Random.Range(1, 3);
         spriteRender = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -38,7 +38,6 @@ public class DestroyableObject : MonoBehaviour
     private void ChangeSprite() 
     {
         spriteRender.sprite = destroyedSprite;    
-    
     }
 
 
@@ -50,6 +49,7 @@ public class DestroyableObject : MonoBehaviour
         objectRB.AddForce(transform.up * force, ForceMode2D.Impulse);
         objectRB.gravityScale = 2f;
         GetComponent<Animator>().enabled = true;
+        objectCol.enabled = false;
         ChangeSprite();
     }
 
