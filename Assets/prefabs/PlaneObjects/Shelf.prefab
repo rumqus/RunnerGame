@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7775402823862146219}
   m_Layer: 0
-  m_Name: BookShelf2 1
+  m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -235832584, guid: 454d8bb4f8e399148855ce94bc08cd75, type: 3}
+  m_Sprite: {fileID: -1724785822, guid: 454d8bb4f8e399148855ce94bc08cd75, type: 3}
   m_Color: {r: 0.8845525, g: 0.9622642, b: 0.41304737, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,6 +130,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0019336784, y: 0.67}
-  m_Size: {x: 3.9332457, y: 0.23999996}
+  m_Offset: {x: 0.00070316513, y: -0.6548444}
+  m_Size: {x: 2.71454, y: 0.15031056}
   m_Direction: 1
