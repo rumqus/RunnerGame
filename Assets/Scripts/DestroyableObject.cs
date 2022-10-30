@@ -31,7 +31,8 @@ public class DestroyableObject : MonoBehaviour
         if (collision.TryGetComponent<Player>(out component))
         {
             SmashObject();
-            CreateCoin(randomCoins);            
+            CreateCoin(randomCoins);
+            gameObject.layer = 7;
         }
     }
 

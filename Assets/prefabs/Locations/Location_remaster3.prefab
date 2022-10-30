@@ -333,18 +333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1388075711508829549}
     m_Modifications:
-    - target: {fileID: 4456419978064499527, guid: c24231173a31e1846903e0d8c2867d6a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456419978064499527, guid: c24231173a31e1846903e0d8c2867d6a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456419978064499527, guid: c24231173a31e1846903e0d8c2867d6a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.59
-      objectReference: {fileID: 0}
     - target: {fileID: 4806188799320634136, guid: c24231173a31e1846903e0d8c2867d6a, type: 3}
       propertyPath: m_Name
       value: BookShelf (1)
