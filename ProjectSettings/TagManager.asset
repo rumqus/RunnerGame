@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: frontColumns
+    uniqueID: 4125165971
+    locked: 0
