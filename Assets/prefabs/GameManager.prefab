@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8768577933549680856}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -74,6 +74,11 @@ MonoBehaviour:
   - {fileID: 1388075711508829544, guid: 4f32208d4a2d5a342b241ac46de30e71, type: 3}
   - {fileID: 1388075711508829544, guid: 9e50e60d6d59751489b25251cd186aef, type: 3}
   - {fileID: 1388075711508829544, guid: c93f82043294bb74191ed5ca0dd1d034, type: 3}
+  - {fileID: 1388075711508829544, guid: 60fdfc1240ba88342897de481efdafbf, type: 3}
+  - {fileID: 1388075711508829544, guid: 2b9b74accefed8c47a519c4632933330, type: 3}
+  - {fileID: 1388075711508829544, guid: 0a91f994987b5eb47b98fe049a4ae4af, type: 3}
+  - {fileID: 1388075711508829544, guid: dd551f55bdf38b54ba286e2c613c30a9, type: 3}
+  - {fileID: 1388075711508829544, guid: fe55e320e1aa7ad4e94f1b49913edd00, type: 3}
 --- !u!114 &7994003067641524756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  UiCircle: {fileID: 0}
   time: 4
   timerText: {fileID: 0}
 --- !u!114 &3757602045732175064
