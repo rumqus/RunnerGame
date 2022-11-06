@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,6 +90,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -996,7 +1008,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      things1_8: -830708925
       things1_39: 1408338663
       things1_33: -390911885
       things1_11: 689745470
@@ -1011,6 +1022,7 @@ TextureImporter:
       things1_19: -643141729
       things1_16: -67677548
       things1_14: -1305624215
+      things1_22: 543077519
       things1_23: -773214062
       things1_18: 1136921534
       things1_26: 2120884764
@@ -1036,8 +1048,8 @@ TextureImporter:
       things1_32: -880306450
       things1_0: 268048532
       things1_4: 650085865
-      things1_22: 543077519
       things1_5: 1208735403
+      things1_8: -830708925
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

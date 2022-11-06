@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,6 +90,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -744,7 +756,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      things2_7: 136690281
+      things2_2: 589750265
       things2_1: 152236221
       things2_16: 1245734811
       things2_27: -1046866300
@@ -773,7 +785,7 @@ TextureImporter:
       things2_8: 1969325417
       things2_26: -1015470204
       things2_6: -1758240920
-      things2_2: 589750265
+      things2_7: 136690281
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

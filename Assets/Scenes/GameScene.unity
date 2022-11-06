@@ -3375,6 +3375,30 @@ PrefabInstance:
       propertyPath: endScorePanel
       value: 
       objectReference: {fileID: 1007150417}
+    - target: {fileID: 8768577933549680805, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+      propertyPath: levelLocations.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768577933549680805, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+      propertyPath: levelLocations.Array.data[10]
+      value: 
+      objectReference: {fileID: 1388075711508829544, guid: 60fdfc1240ba88342897de481efdafbf, type: 3}
+    - target: {fileID: 8768577933549680805, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+      propertyPath: levelLocations.Array.data[11]
+      value: 
+      objectReference: {fileID: 1388075711508829544, guid: 2b9b74accefed8c47a519c4632933330, type: 3}
+    - target: {fileID: 8768577933549680805, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+      propertyPath: levelLocations.Array.data[12]
+      value: 
+      objectReference: {fileID: 1388075711508829544, guid: 0a91f994987b5eb47b98fe049a4ae4af, type: 3}
+    - target: {fileID: 8768577933549680805, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+      propertyPath: levelLocations.Array.data[13]
+      value: 
+      objectReference: {fileID: 1388075711508829544, guid: dd551f55bdf38b54ba286e2c613c30a9, type: 3}
+    - target: {fileID: 8768577933549680805, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+      propertyPath: levelLocations.Array.data[14]
+      value: 
+      objectReference: {fileID: 1388075711508829544, guid: fe55e320e1aa7ad4e94f1b49913edd00, type: 3}
     - target: {fileID: 8768577933549680856, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
       propertyPath: m_Name
       value: GameManager
