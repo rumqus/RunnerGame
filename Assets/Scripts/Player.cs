@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private int currentJump; // текущее количество совершенных прыжков
     public static bool alive; // статус игрока жив или мертв
     [SerializeField] private Animator playerAnimator;
+    private AudioSource playerAudio;
 
     //камера
     [SerializeField] private CinemachineVirtualCamera camera;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         followingNPC.Add(gameObject);
         alive = true;
         transposer = camera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
 
@@ -54,6 +56,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+            
         }
         CheckGrounded();
         NPCMOve();
@@ -133,6 +136,7 @@ public class Player : MonoBehaviour
 
             playerRB.velocity = new Vector2(playerRB.velocity.x, forceOfJump);
             currentJump++;
+            playerAudio.Play();
         }
     }    
 

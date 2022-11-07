@@ -14,6 +14,7 @@ public class DestroyableObject : MonoBehaviour
     private ParticleSystem partisiple;
     private SpriteRenderer spriteRender;
     [SerializeField] private Sprite destroyedSprite;
+    private AudioSource desObjectAudio;
         
     
     private void Start()
@@ -23,6 +24,7 @@ public class DestroyableObject : MonoBehaviour
         objectCol = GetComponent<Collider2D>();
         randomCoins = Random.Range(1, 3);
         spriteRender = GetComponentInChildren<SpriteRenderer>();
+        desObjectAudio = GetComponent<AudioSource>();
     }
 
     
@@ -33,6 +35,7 @@ public class DestroyableObject : MonoBehaviour
             SmashObject();
             CreateCoin(randomCoins);
             gameObject.layer = 7;
+            desObjectAudio.Play();
         }
     }
 
@@ -47,6 +50,7 @@ public class DestroyableObject : MonoBehaviour
     /// </summary>
     private void SmashObject() 
     {
+        
         objectRB.AddForce(transform.up * force, ForceMode2D.Impulse);
         objectRB.gravityScale = 2f;
         GetComponent<Animator>().enabled = true;
