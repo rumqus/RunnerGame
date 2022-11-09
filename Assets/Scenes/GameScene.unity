@@ -3318,6 +3318,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 92618260}
+    - target: {fileID: 3970214747680791196, guid: 64d0c271c4bc8e24788d7a7aafb645cf, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6551d7488acd91a448774b95a6536f54, type: 3}
     - target: {fileID: 3970214747680791200, guid: 64d0c271c4bc8e24788d7a7aafb645cf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3387,18 +3391,6 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 712288549}
-    - target: {fileID: 5616856987863423822, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616856987863423822, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363445449438038666, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7994003067641524756, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
       propertyPath: money
       value: 
@@ -3487,7 +3479,5 @@ PrefabInstance:
       propertyPath: collectedMoney
       value: 
       objectReference: {fileID: 927105795}
-    m_RemovedComponents:
-    - {fileID: 5616856987863423822, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
-    - {fileID: 7363445449438038666, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65178aec2e2816d448b738120cb7dee7, type: 3}

@@ -10,6 +10,7 @@ public class GameScores : MonoBehaviour
     [SerializeField] private Text savedNPC;
     [SerializeField] private Text collectedMoney;
     [SerializeField] private Text walkDistance;
+    
 
     private void OnEnable()
     {

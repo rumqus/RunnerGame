@@ -9,12 +9,14 @@ public class StartTimer : MonoBehaviour
     [SerializeField] private Text timerText;
     private float timeLeft = 0f;
     private bool timerOn = false;
+    private AudioSource ticSound;
 
     private void Start()
     {
         timeLeft = time;
         timerOn = true;
         player.GetComponent<Player>().enabled = false;
+        ticSound = GetComponentInChildren<AudioSource>();
     }
 
     private void Update()
@@ -25,6 +27,7 @@ public class StartTimer : MonoBehaviour
             {
                 timeLeft -= Time.deltaTime;
                 UpdateTimeText();
+                
             }
             else
             {
@@ -33,6 +36,7 @@ public class StartTimer : MonoBehaviour
                 Actions.startAnimation();
                 Locations.locationSpeed = 18f;
             }
+            ticSound.Play();
         }
     }
 

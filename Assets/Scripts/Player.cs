@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public static bool alive; // статус игрока жив или мертв
     [SerializeField] private Animator playerAnimator;
     private AudioSource playerAudio;
+    [SerializeField] AudioClip deathSound;
 
     //камера
     [SerializeField] private CinemachineVirtualCamera camera;
@@ -189,6 +190,8 @@ public class Player : MonoBehaviour
 
     private void StartDeathAnim()
     {
+        playerAudio.clip = deathSound;
+        playerAudio.Play();
         playerAnimator.SetBool("death", true);
     }
 }
