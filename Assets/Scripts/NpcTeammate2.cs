@@ -12,7 +12,6 @@ public class NpcTeammate2 : MonoBehaviour
     bool harvested;
     private float lifeTimer;
     private Animator npcAnimator;
-    private AudioSource npcAudio;
 
     private void Start()
     {
@@ -20,9 +19,6 @@ public class NpcTeammate2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         listNPC = player.GetComponent<Player>().followingNPC;
         npcAnimator = GetComponentInChildren<Animator>();
-        npcAudio = GetComponent<AudioSource>();
-
-
     }
 
     private void Update()
@@ -41,8 +37,7 @@ public class NpcTeammate2 : MonoBehaviour
             gameObject.transform.parent = null;
             Actions.trimChainNPC();
             npcAnimator.SetBool("run", true);
-            npcAudio.Play();
-
+            FindObjectOfType<AudioManager>().SoundPlay("npc");
         }
     }
 

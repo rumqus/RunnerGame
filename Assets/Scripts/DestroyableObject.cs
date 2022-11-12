@@ -11,10 +11,9 @@ public class DestroyableObject : MonoBehaviour
     [SerializeField] private float force; // сила с которой улетает подьитый обхект
     [SerializeField] private GameObject coin; // префаб монеты
     private int randomCoins; // случайное количество монет выпадающих в подбитом объекте
-    private ParticleSystem partisiple;
     private SpriteRenderer spriteRender;
     [SerializeField] private Sprite destroyedSprite;
-    private AudioSource desObjectAudio;
+    
         
     
     private void Start()
@@ -24,7 +23,8 @@ public class DestroyableObject : MonoBehaviour
         objectCol = GetComponent<Collider2D>();
         randomCoins = Random.Range(1, 3);
         spriteRender = GetComponentInChildren<SpriteRenderer>();
-        desObjectAudio = GetComponent<AudioSource>();
+        
+
     }
 
     
@@ -35,7 +35,7 @@ public class DestroyableObject : MonoBehaviour
             SmashObject();
             CreateCoin(randomCoins);
             gameObject.layer = 7;
-            desObjectAudio.Play();
+            FindObjectOfType<AudioManager>().SoundPlay("desObject");
         }
     }
 

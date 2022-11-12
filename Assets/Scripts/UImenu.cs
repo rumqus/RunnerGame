@@ -37,16 +37,19 @@ public class UImenu : MonoBehaviour
     {
         pausePanel.SetActive(true);
         Time.timeScale = 0;
+        FindObjectOfType<AudioManager>().SoundPlay("button");
     }
 
     public void UnPauseGame()
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+        FindObjectOfType<AudioManager>().SoundPlay("button");
     }
 
     public void QuitGame(int index) 
     {
+        FindObjectOfType<AudioManager>().SoundPlay("button");
         StartGameButton.LoadScene(index);    
     }
 

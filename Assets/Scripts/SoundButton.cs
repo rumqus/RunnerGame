@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,27 +9,29 @@ public class SoundButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentSprite = GetComponent<Button>().image;        
+        currentSprite = GetComponent<Button>().image;
     }
 
-    public void OnOffSound() 
+    public void OnOffSound()
     {
         // something that on\off sound
         ChangeSprite();
-        
     }
 
 
-    private void ChangeSprite() 
+    private void ChangeSprite()
     {
         if (currentSprite.sprite.name == OnSoundSprite.name)
         {
             currentSprite.sprite = OffSounfSprite;
+            Debug.Log("off");
         }
-        else if (currentSprite.sprite.name == OffSounfSprite.name) 
+        else if (currentSprite.sprite.name == OffSounfSprite.name)
         {
             currentSprite.sprite = OnSoundSprite;
+            Debug.Log("on");
         }
-   
+        FindObjectOfType<AudioManager>().SoundPlay("button");
+        Debug.Log(currentSprite.sprite.name);
     }
 }

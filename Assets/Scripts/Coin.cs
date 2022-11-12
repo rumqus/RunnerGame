@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     [SerializeField] private float lifeTime; // время жизни монетки
     private float maxRandom;
     private float minRandom;
-    private AudioSource audioCoin;
+    
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,13 +19,14 @@ public class Coin : MonoBehaviour
         {
            Destroy(gameObject);
            Actions.countCoins();
-           audioCoin.Play();           
+           FindObjectOfType<AudioManager>().SoundPlay("coin");
+
         }
     }
 
     private void Start()
     {
-        audioCoin = GetComponent<AudioSource>();
+        
         SetCoinPushSpeed();
         maxRandom = Random.Range(0.5f,1f);
         minRandom = Random.Range(0.5f, 0.7f); 

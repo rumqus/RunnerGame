@@ -1,24 +1,19 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sound : MonoBehaviour
+[System.Serializable]
+public class Sound
 {
-    public static bool SoundOn;
+    public string name;
+    public AudioClip clip;
+    [Range(0.0f, 1.0f)]
+    public float volume;
+
+    [HideInInspector]
+    public AudioSource audioSource;
+
+    public bool loop;
     
-
-
-    private void Start()
-    {
-        SoundOn = true;       
-    }
-
-    public void CheckSound(AudioSource buttons) 
-    {
-        if (SoundOn == true)
-        {
-            buttons.Play();
-        }
-    
-    }
 }

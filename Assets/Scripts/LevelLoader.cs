@@ -9,8 +9,11 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private float transitionTime;   
 
     public void LoadScene(int index) 
-    {        
+    {
+        FindObjectOfType<AudioManager>().SoundPlay("button");
         StartCoroutine(LoadLevel(index));
+        
+
     }
 
     IEnumerator LoadLevel(int sceneIndex) 
@@ -20,5 +23,8 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneIndex);
         GameScores.NullScore(); // обнуляем текущие результаты
+        
+
     }
+  
 }
