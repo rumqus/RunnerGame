@@ -18,20 +18,23 @@ public class SoundButton : MonoBehaviour
         ChangeSprite();
     }
 
+   
+   
 
     private void ChangeSprite()
     {
         if (currentSprite.sprite.name == OnSoundSprite.name)
         {
             currentSprite.sprite = OffSounfSprite;
-            Debug.Log("off");
+            AudioManager.isMuted = true;
+            
         }
         else if (currentSprite.sprite.name == OffSounfSprite.name)
         {
             currentSprite.sprite = OnSoundSprite;
-            Debug.Log("on");
+            AudioManager.isMuted = false;
         }
         FindObjectOfType<AudioManager>().SoundPlay("button");
-        Debug.Log(currentSprite.sprite.name);
+        FindObjectOfType<AudioManager>().CheckMute();
     }
 }

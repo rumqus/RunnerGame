@@ -11,9 +11,11 @@ public class Sound
     [Range(0.0f, 1.0f)]
     public float volume;
 
+    public bool playOnAwake = true;
+
     [HideInInspector]
     public AudioSource audioSource;
 
-    public bool loop;
+    public bool loop; 
     
 }
