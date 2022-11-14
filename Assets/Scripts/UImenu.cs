@@ -36,6 +36,7 @@ public class UImenu : MonoBehaviour
     public void PauseGame()
     {
         pausePanel.SetActive(true);
+        pauseText.SetActive(true);
         Time.timeScale = 0;
         FindObjectOfType<AudioManager>().SoundPlay("button");
     }
