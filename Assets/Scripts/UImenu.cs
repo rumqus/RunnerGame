@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ public class UImenu : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject pauseText;
     [SerializeField] private GameObject endScorePanel;
-    [SerializeField] private Text savedNPC;
-    [SerializeField] private Text money;
-    [SerializeField] private Text distance;
+    [SerializeField] private TextMeshProUGUI savedNPC;
+    [SerializeField] private TextMeshProUGUI money;
+    [SerializeField] private TextMeshProUGUI distance;
     [SerializeField] private Button resume;
     private float speedCounting;
     private float tempScore;
@@ -76,7 +77,7 @@ public class UImenu : MonoBehaviour
         StartCoroutine(CountUp(GameScores.maxDistance, distance));
     }
 
-    IEnumerator CountUp(int targetScore, Text targetScoreDisplay)
+    IEnumerator CountUp(int targetScore, TextMeshProUGUI targetScoreDisplay)
     {
         while (tempScore < targetScore)
         {
