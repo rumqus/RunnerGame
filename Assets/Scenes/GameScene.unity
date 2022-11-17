@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: saved  cats
+  m_text: collected money
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffb8cc945a5dfee448ce5676e68803fb, type: 2}
   m_sharedMaterial: {fileID: -1995369603694129669, guid: ffb8cc945a5dfee448ce5676e68803fb, type: 2}
@@ -2277,7 +2277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1007150418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2806,7 +2806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1412029343
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3311,7 +3311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: saved  cats
+  m_text: walked distance
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffb8cc945a5dfee448ce5676e68803fb, type: 2}
   m_sharedMaterial: {fileID: -1995369603694129669, guid: ffb8cc945a5dfee448ce5676e68803fb, type: 2}
