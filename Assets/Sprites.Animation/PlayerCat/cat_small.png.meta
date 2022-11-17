@@ -350,10 +350,10 @@ TextureImporter:
       name: cat_small_11
       rect:
         serializedVersion: 2
-        x: 242
-        y: 540
-        width: 196
-        height: 153
+        x: 221
+        y: 539
+        width: 217
+        height: 155
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,9 +371,9 @@ TextureImporter:
       name: cat_small_12
       rect:
         serializedVersion: 2
-        x: 448
+        x: 443
         y: 542
-        width: 196
+        width: 200
         height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -434,9 +434,9 @@ TextureImporter:
       name: cat_small_15
       rect:
         serializedVersion: 2
-        x: 36
+        x: 27
         y: 395
-        width: 189
+        width: 198
         height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -455,9 +455,9 @@ TextureImporter:
       name: cat_small_16
       rect:
         serializedVersion: 2
-        x: 252
+        x: 249
         y: 380
-        width: 183
+        width: 186
         height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -476,9 +476,9 @@ TextureImporter:
       name: cat_small_17
       rect:
         serializedVersion: 2
-        x: 472
+        x: 462
         y: 378
-        width: 175
+        width: 185
         height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -497,10 +497,10 @@ TextureImporter:
       name: cat_small_18
       rect:
         serializedVersion: 2
-        x: 689
-        y: 379
-        width: 186
-        height: 153
+        x: 680
+        y: 380
+        width: 195
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -518,9 +518,9 @@ TextureImporter:
       name: cat_small_19
       rect:
         serializedVersion: 2
-        x: 892
+        x: 887
         y: 384
-        width: 195
+        width: 200
         height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -945,7 +945,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cat_small_22: 698044458
+      cat_small_27: -1786644749
       cat_small_36: -1574234248
       cat_small_1: -1701079594
       cat_small_15: -89026352
@@ -983,7 +983,7 @@ TextureImporter:
       cat_small_32: -73904045
       cat_small_7: -558296331
       cat_small_28: 2093293028
-      cat_small_27: -1786644749
+      cat_small_22: 698044458
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
