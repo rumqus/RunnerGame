@@ -1698,7 +1698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 389.83, y: -40}
+  m_AnchoredPosition: {x: 369, y: -40}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065439915
@@ -2170,7 +2170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -414, y: 222}
+  m_AnchoredPosition: {x: -379.3, y: 235.8}
   m_SizeDelta: {x: 81.2877, y: 81.2877}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250422167
@@ -3231,7 +3231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -475.8925, y: -13.8925}
+  m_AnchoredPosition: {x: -379.3, y: -26.108}
   m_SizeDelta: {x: 72.2151, y: 72.2151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687564922
@@ -3646,7 +3646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 418.33, y: 207}
+  m_AnchoredPosition: {x: 382.89, y: 227}
   m_SizeDelta: {x: 72.2151, y: 72.2151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1897653381
@@ -4236,8 +4236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.5297, y: -285}
-  m_SizeDelta: {x: 465.9406, y: 30}
+  m_AnchoredPosition: {x: -5.5297, y: -279.50494}
+  m_SizeDelta: {x: 465.9406, y: 40.9901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130296376
 MonoBehaviour:
@@ -4261,18 +4261,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 16e38fdc1b10bc745bfa13e7d53a085d, type: 3}
-    m_FontSize: 14
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MADE BY @rUMQUS AND @kashidasunkasyak
+  m_Text: MADE BY @rUMQUS AND @kashidaj
 --- !u!222 &2130296377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4316,7 +4316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -384, y: -115}
+  m_AnchoredPosition: {x: -345.4, y: -169.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141649528

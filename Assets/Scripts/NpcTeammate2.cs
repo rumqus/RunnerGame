@@ -35,7 +35,10 @@ public class NpcTeammate2 : MonoBehaviour
             listNPC.Add(gameObject);
             Actions.countNPC();
             gameObject.transform.parent = null;
-            Actions.trimChainNPC();
+            if (Player.alive != false)
+            {
+                Actions.trimChainNPC();
+            }
             npcAnimator.SetBool("run", true);
             FindObjectOfType<AudioManager>().SoundPlay("npc");
         }

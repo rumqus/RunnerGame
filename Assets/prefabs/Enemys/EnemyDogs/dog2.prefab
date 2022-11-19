@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6899051284374916001}
   - component: {fileID: 2487234914938473300}
   - component: {fileID: 2935087162621054244}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: dog2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 8850089232685300338}
   - component: {fileID: 7240380376978440000}
   - component: {fileID: 4422877556380474095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: dog1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

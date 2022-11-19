@@ -34,11 +34,17 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+
         if (collision.gameObject.TryGetComponent<Player>(out component))
         {
-            Player.alive = false;
-            Actions.startDeathAnimaion();
-            StartCoroutine(DelayDeath());
+            
+            if (Player.alive != null)
+            {
+                Player.alive = false;
+                Actions.startDeathAnimaion();
+                StartCoroutine(DelayDeath());
+
+            }           
             
         }
     }
@@ -47,6 +53,10 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(0.433f);
         Actions.endGame();
-        component.gameObject.GetComponent<Player>().enabled = false;       
+        if (Player.alive != false)
+        {
+            component.gameObject.GetComponent<Player>().enabled = false;
+        }
+             
     }
 }

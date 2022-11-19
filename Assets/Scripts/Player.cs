@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     // данные игрока
     private Rigidbody2D playerRB; // rigidbody игрока
+    private Collider2D playerCol;
     [SerializeField] private float speed; // скорость игрока
     private float currentSpeed;
     [SerializeField] private float forceOfJump; // сила прыжка
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     private int currentJump; // текущее количество совершенных прыжков
     public static bool alive; // статус игрока жив или мертв
     [SerializeField] private Animator playerAnimator;
+
     
     //камера
     [SerializeField] private CinemachineVirtualCamera camera;
@@ -43,6 +45,9 @@ public class Player : MonoBehaviour
         followingNPC.Add(gameObject);
         alive = true;
         transposer = camera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        playerCol = GetComponent<Collider2D>();
+        playerCol.enabled = true;
+
     }
 
 
@@ -59,6 +64,20 @@ public class Player : MonoBehaviour
         CheckGrounded();
         NPCMOve();
         ChangeCameraDamping();
+        MoveToDeathLayer();
+       
+               
+    }
+
+    public void MoveToDeathLayer() 
+    {
+        if (alive == false)
+        {
+            playerCol.enabled = false;
+            playerRB.gravityScale = 0;
+            playerRB.velocity = Vector3.zero;
+            playerRB.isKinematic = true;
+        }
     }
 
 
@@ -187,6 +206,7 @@ public class Player : MonoBehaviour
 
     private void StartDeathAnim()
     {
+        
         FindObjectOfType<AudioManager>().SoundPlay("death");
         playerAnimator.SetBool("death", true);
     }

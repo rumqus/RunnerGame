@@ -13,8 +13,8 @@ TagManager:
   - UI
   - ground
   - ignore
-  - 
-  - 
+  - playerIgnore
+  - interactObjects
   - 
   - 
   - 
